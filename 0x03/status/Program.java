@@ -1,26 +1,26 @@
 public class Program {
     public static void main(String[] args) {
-        PersonagemGame personagem1 = new PersonagemGame();
+        PersonagemGame personagem1 = new PersonagemGame(50, "Sonic");
 
-        personagem1.setNome("Sonic");
-        personagem1.setSaudeAtual(0);
+        personagem1.setNome("");
 
-        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
 
-        personagem1.receberCura(90);
+        personagem1.receberCura(91);
+        personagem1.setNome(null);
 
-        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
 
         personagem1.tomarDano(25);
 
-        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
 
-        personagem1.tomarDano(65);
+        personagem1.tomarDano(80);
 
-        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
-
-        personagem1.receberCura(10);
-
-        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
+        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
+                , personagem1.getStatus());
     }
 }
