@@ -5,18 +5,18 @@ public class Program {
         personagem1.setNome("Sonic");
         personagem1.setSaudeAtual(10);
 
-        System.out.printf("%d\n", personagem1.getSaudeAtual());
+        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
 
         personagem1.receberCura(91);
 
-        System.out.printf("%d\n", personagem1.getSaudeAtual());
+        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
 
         personagem1.tomarDano(25);
 
-        System.out.printf("%d\n", personagem1.getSaudeAtual());
+        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
 
         personagem1.tomarDano(80);
 
-        System.out.printf("%d\n", personagem1.getSaudeAtual());
+        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus() + "\n");
     }
 }
