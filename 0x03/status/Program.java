@@ -21,6 +21,6 @@ public class Program {
 
         personagem1.receberCura(10);
 
-        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus() + "\n");
+        System.out.println(personagem1.getSaudeAtual() + " - " + personagem1.getStatus());
     }
 }
