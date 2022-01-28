@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class FormaGeometrica {
+public class FormaGeometrica {
+    public double area() {
+        throw new UnsupportedOperationException("Funcao area nao implementada");
+    }
 }

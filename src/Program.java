@@ -1,26 +1,31 @@
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
 public class Program {
     public static void main(String[] args) {
-        PersonagemGame personagem1 = new PersonagemGame(50, "Sonic");
+        Quadrado quadrado = new Quadrado();
 
-        personagem1.setNome("");
+        quadrado.setLado(10);
 
-        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
-                , personagem1.getStatus());
+        if (Retangulo.class.isAssignableFrom(Quadrado.class))
+            System.out.println("Quadrado eh uma subclasse de Retangulo");
+        else
+            System.out.println("Quadrado nao eh uma subclasse de Retangulo");
 
-        personagem1.receberCura(91);
-        personagem1.setNome(null);
+        try {
+            Field campoAltura = Retangulo.class.getDeclaredField("altura");
+            int modifierAltura = campoAltura.getModifiers();
+            System.out.printf("Campo altura eh %s\n", Modifier.toString(modifierAltura));
 
-        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
-                , personagem1.getStatus());
+            Field campoLargura = Retangulo.class.getDeclaredField("altura");
+            int modifierLargura = campoLargura.getModifiers();
+            System.out.printf("Campo largura eh %s\n", Modifier.toString(modifierLargura));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
 
-        personagem1.tomarDano(25);
-
-        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
-                , personagem1.getStatus());
-
-        personagem1.tomarDano(80);
-
-        System.out.printf("%s, %d, %s\n", personagem1.getNome(), personagem1.getSaudeAtual()
-                , personagem1.getStatus());
+        System.out.printf("Lado: %.2f\n", quadrado.getLado());
+        System.out.printf("Area: %.2f\n", quadrado.area());
+        System.out.printf(quadrado.toString() + "\n");
     }
 }
