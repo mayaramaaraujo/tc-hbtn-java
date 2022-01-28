@@ -29,12 +29,12 @@ public class PersonagemGame {
     }
 
     public void tomarDano(int quantidadeDeDano) {
-       int saude = saudeAtual - quantidadeDeDano;
-       if(saude > 0) {
-           setSaudeAtual(saude);
-       } else  {
-           setSaudeAtual(0);
-       }
+        int saude = saudeAtual - quantidadeDeDano;
+        if(saude > 0) {
+            setSaudeAtual(saude);
+        } else  {
+            setSaudeAtual(0);
+        }
     }
 
     public void receberCura(int quantidadeDeCura) {
