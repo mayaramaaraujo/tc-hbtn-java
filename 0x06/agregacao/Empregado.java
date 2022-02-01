@@ -22,7 +22,7 @@ public class Empregado {
     }
 
     public void apresentar() {
-        System.out.println(
+        System.out.printf(
                 "Codigo: " + this.getCodigo() + "\n" +
                 "Nome: " + this.getNome() + "\n" +
                 "Bairro: " + endereco.getBairro() + "\n" +
