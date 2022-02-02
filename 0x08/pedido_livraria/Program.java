@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Program {
     public static void main(String[] args) {
         produtos.Livro livro1 = new produtos.Livro("Duna", 2017, "Brasil", 56.30, 680, "Frank Herbert", 1);
@@ -22,7 +24,7 @@ public class Program {
 
         Pedido pedido1 = new Pedido(0, itensPedido1);
 
-        System.out.printf("Total Pedido: %.2f\n", pedido1.calcularTotal());
+        System.out.printf(Locale.FRANCE,"Total Pedido: %.2f\n", pedido1.calcularTotal());
 
         // Pedido 2
         ItemPedido[] itensPedido2 = new ItemPedido[]{
@@ -32,7 +34,7 @@ public class Program {
 
         Pedido pedido2 = new Pedido(10, itensPedido2);
 
-        System.out.printf("Total Pedido: %.2f\n", pedido2.calcularTotal());
+        System.out.printf(Locale.FRANCE,"Total Pedido: %.2f\n", pedido2.calcularTotal());
 
         // Pedido 3
         ItemPedido[] itensPedido3 = new ItemPedido[]{
@@ -43,7 +45,7 @@ public class Program {
 
         Pedido pedido3 = new Pedido(5, itensPedido3);
 
-        System.out.printf("Total Pedido: %.2f\n", pedido3.calcularTotal());
+        System.out.printf(Locale.FRANCE,"Total Pedido: %.2f\n", pedido3.calcularTotal());
 
         // Pedido 4
         ItemPedido[] itensPedido4 = new ItemPedido[]{
@@ -56,6 +58,6 @@ public class Program {
 
         Pedido pedido4 = new Pedido(5, itensPedido4);
 
-        System.out.printf("Total Pedido: %.2f\n", pedido4.calcularTotal());
+        System.out.printf(Locale.FRANCE,"Total Pedido: %.2f\n", pedido4.calcularTotal());
     }
 }
