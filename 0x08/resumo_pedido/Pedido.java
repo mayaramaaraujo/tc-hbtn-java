@@ -37,12 +37,12 @@ public class Pedido {
     public void apresentarResumoPedido() {
         System.out.printf(Locale.FRANCE,"------- RESUMO PEDIDO -------" + "\n");
         for (ItemPedido p: itens) {
-            System.out.printf("Tipo: " + p.getProduto().getClass().getSimpleName()
-            + " Titulo: " + p.getProduto().getTitulo()
-            + " Preco: " + p.getProduto().getPrecoBruto()
-            + " Quant: " + p.getQuantidade()
-            + " Total: " + p.getQuantidade() * p.getProduto().getPrecoBruto()
-            + "\n");
+            System.out.printf("Tipo: " + p.getProduto().getClass().getSimpleName());
+            System.out.printf("  Titulo: " + p.getProduto().getTitulo());
+            System.out.printf(Locale.FRANCE, "  Preco: %.2f", p.getProduto().obterPrecoLiquido());
+            System.out.printf("  Quant: " + p.getQuantidade());
+            System.out.printf(Locale.FRANCE, "  Total: %.2f", p.getQuantidade() * p.getProduto().obterPrecoLiquido());
+            System.out.printf("\n");
         }
         System.out.println("----------------------------");
         System.out.printf(Locale.FRANCE,"DESCONTO: %.2f", calcularTotalBruto() * calcularPercentualDeDesconto());
