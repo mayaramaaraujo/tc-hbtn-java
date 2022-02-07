@@ -36,8 +36,6 @@ public class Pedido {
             if(this.cookies.get(i).getSabor().equals(sabor)) {
                 quantidadeDeCaixasRemovidas = quantidadeDeCaixasRemovidas + this.cookies.get(i).getQuantidadeCaixas();
                 this.cookies.remove(this.cookies.get(i));
-            } else {
-                quantidadeDeCaixasRemovidas = 0;
             }
         }
 
