@@ -16,8 +16,8 @@ public class Tarefa {
         return estahFeita;
     }
 
-    public Integer getIdentificador() {
-        return new Integer(identificador);
+    public int getIdentificador() {
+        return this.identificador;
     }
 
     public void setDescricao(String descricao) {

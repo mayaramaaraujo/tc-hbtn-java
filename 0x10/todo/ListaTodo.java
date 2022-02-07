@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListaTodo {
-    private List<Tarefa> tarefas;
+    private ArrayList<Tarefa> tarefas;
 
     public ListaTodo() {
         this.tarefas = new ArrayList<>();
@@ -15,7 +14,7 @@ public class ListaTodo {
         }
 
         for (int i = 0; i < this.tarefas.size(); i++) {
-            if(this.tarefas.get(i).getIdentificador().equals(tarefa.getIdentificador())){
+            if(this.tarefas.get(i).getIdentificador() == tarefa.getIdentificador()){
                 throw new IllegalArgumentException("Tarefa com identificador  " + tarefa.getIdentificador() +
                         " ja existente na lista");
             }
@@ -23,9 +22,9 @@ public class ListaTodo {
         this.tarefas.add(tarefa);
     }
 
-    public boolean marcarTarefaFeita(Integer identificador) {
+    public boolean marcarTarefaFeita(int identificador) {
         for (Tarefa tarefa: this.tarefas) {
-            if(tarefa.getIdentificador().equals(identificador)) {
+            if(tarefa.getIdentificador() == identificador) {
                 tarefa.setEstahFeita(true);
                 return true;
             };
@@ -36,7 +35,7 @@ public class ListaTodo {
 
     public boolean desfazerTarefa(Integer identificador) {
         for (Tarefa tarefa: this.tarefas) {
-            if(tarefa.getIdentificador().equals(identificador)) {
+            if(tarefa.getIdentificador() == identificador) {
                 tarefa.setEstahFeita(false);
                 return true;
             };
