@@ -4,7 +4,7 @@ public class ListaTodo {
     private ArrayList<Tarefa> tarefas;
 
     public ListaTodo() {
-        this.tarefas = new ArrayList<>();
+        this.tarefas = new ArrayList<Tarefa>();
     }
 
     public void adicionarTarefa(Tarefa tarefa) {
@@ -15,7 +15,7 @@ public class ListaTodo {
 
         for (int i = 0; i < this.tarefas.size(); i++) {
             if(this.tarefas.get(i).getIdentificador() == tarefa.getIdentificador()){
-                throw new IllegalArgumentException("Tarefa com identificador  " + tarefa.getIdentificador() +
+                throw new IllegalArgumentException("Tarefa com identificador " + tarefa.getIdentificador() +
                         " ja existente na lista");
             }
         }
@@ -62,7 +62,7 @@ public class ListaTodo {
             }
             System.out.printf("]");
 
-            System.out.printf(" Id: " + t.getIdentificador() + " - Descricao: " + t.getDescricao() + "\n" );
+            System.out.printf("  Id: " + t.getIdentificador() + " - Descricao: " + t.getDescricao() + "\n" );
         }
     }
 }
