@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class Banco {
     private String nome;
-    private List<Agencia> agencias;
+    private ArrayList<Agencia> agencias;
 
     public Banco(String nome) {
         this.nome = nome;
@@ -73,7 +73,7 @@ public class Banco {
 
             int transacaoIndex = 1;
             for (double transacao: c.getTransacoes()) {
-                System.out.printf(" [" + transacaoIndex + "] valor ");
+                System.out.printf("  [" + transacaoIndex + "] valor ");
                 System.out.printf(Locale.FRANCE,"%.2f \n", transacao);
                 transacaoIndex++;
             }

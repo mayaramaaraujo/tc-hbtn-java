@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Cliente {
     private String nome;
-    private List<Double> transacoes;
+    private ArrayList<Double> transacoes;
 
     public Cliente(String nome) {
         this.nome = nome;
