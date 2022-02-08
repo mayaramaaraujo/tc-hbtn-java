@@ -26,9 +26,9 @@ public class Celular {
 
         if(verificarSeContatoExiste(contatoAntigo.getNome())) {
             if (contatoAntigo.getNome().equals(novoContato.getNome())) {
-                contatoAntigo.setNome(novoContato.getNome());
-                contatoAntigo.setNumeroDeTelefone(novoContato.getNumeroDeTelefone());
-                contatoAntigo.setTipoNumero(novoContato.getTipoNumero());
+                Integer posicao = obterPosicao(contatoAntigo.getNome());
+                this.contatos.set(posicao, novoContato);
+
             } else if (verificarSeContatoExiste(novoContato.getNome())) {
                 throw new IllegalArgumentException("Nao foi possivel modificar contato. Contato jah existente com esse nome");
             }
@@ -72,5 +72,15 @@ public class Celular {
             }
         }
         return false;
+    }
+
+    public int obterPosicao(String nome) {
+        for (int i = 0; i < this.contatos.size(); i++) {
+            if(this.contatos.get(i).getNome().equals(nome)) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }
