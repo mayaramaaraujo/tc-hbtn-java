@@ -38,13 +38,14 @@ public class Celular {
     }
 
     public void removerContato(Contato contato) {
-        for (int i = 0; i < this.contatos.size(); i++) {
-            if(!this.contatos.contains(contato)) {
-                throw new IllegalArgumentException("Nao foi possivel remover contato. Contato nao existe");
-            }
+        Integer posicao = obterPosicao(contato.getNome());
 
-            this.contatos.remove(this.contatos.indexOf(contato));
+        if(verificarSeContatoExiste(contato.getNome())) {
+            this.contatos.remove(this.contatos.get(posicao));
+        } else {
+            throw new IllegalArgumentException("Nao foi possivel remover contato. Contato nao existe");
         }
+
     }
 
     public List<Contato> buscarContato(String nome) {
