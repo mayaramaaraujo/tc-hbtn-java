@@ -73,7 +73,7 @@ public class Banco {
 
             int transacaoIndex = 1;
             for (double transacao: c.getTransacoes()) {
-                System.out.printf(" [" + transacaoIndex + "] valor ");
+                System.out.printf("  [" + transacaoIndex + "] valor ");
                 System.out.printf("%.2f\n", transacao);
                 transacaoIndex++;
             }
