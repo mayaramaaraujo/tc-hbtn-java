@@ -1,3 +1,5 @@
+package atividades;
+
 public class EnviarEmail implements Atividade {
     @Override
     public void executar() {
