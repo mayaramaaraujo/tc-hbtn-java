@@ -2,7 +2,7 @@ package provedores;
 
 public class Loggi implements ProvedorFrete {
     @Override
-    public Frete calcularFrete(double peso, double valor) {
+    public double calcularFrete(double peso, double valor) {
         double valorFrete;
 
         if(peso > 5000) {
@@ -11,7 +11,7 @@ public class Loggi implements ProvedorFrete {
             valorFrete = valor * 0.04;
         }
 
-        return new Frete(valorFrete, TipoProvedorFrete.LOGGI);
+        return valorFrete;
     }
 
     @Override

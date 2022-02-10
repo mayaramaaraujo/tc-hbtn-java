@@ -1,4 +1,3 @@
-import provedores.Frete;
 import provedores.ProvedorFrete;
 
 public class ProcessadorPedido {
@@ -9,7 +8,9 @@ public class ProcessadorPedido {
     }
 
     public void processar(Pedido pedido) {
-        Frete frete = provedorFrete.calcularFrete(pedido.getPeso(), pedido.getTotal());
-        pedido.setFrete(frete);
+       double valorFrete = provedorFrete.calcularFrete(pedido.getPeso(), pedido.getTotal());
+
+       Frete frete = new Frete(valorFrete, provedorFrete.obterTipoProvedorFrete());
+       pedido.setFrete(frete);
     }
 }

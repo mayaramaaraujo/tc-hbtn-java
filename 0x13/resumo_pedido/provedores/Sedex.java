@@ -2,7 +2,7 @@ package provedores;
 
 public class Sedex implements ProvedorFrete {
     @Override
-    public Frete calcularFrete(double peso, double valor) {
+    public double calcularFrete(double peso, double valor) {
         double valorFrete;
 
         if(peso > 1000) {
@@ -11,7 +11,7 @@ public class Sedex implements ProvedorFrete {
             valorFrete = valor * 0.05;
         }
 
-        return new Frete(valorFrete, TipoProvedorFrete.SEDEX);
+        return valorFrete;
     }
 
     @Override
