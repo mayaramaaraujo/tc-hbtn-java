@@ -1,4 +1,8 @@
-public class Sedex implements ProvedorFrete{
+import provedores.Frete;
+import provedores.ProvedorFrete;
+import provedores.TipoProvedorFrete;
+
+public class Sedex implements ProvedorFrete {
     @Override
     public Frete calcularFrete(double peso, double valor) {
         double valorFrete;
@@ -13,7 +17,7 @@ public class Sedex implements ProvedorFrete{
     }
 
     @Override
-    public TipoProvedorFrete obterProvedorFrete() {
+    public TipoProvedorFrete obterTipoProvedorFrete() {
         return TipoProvedorFrete.SEDEX;
     }
 }

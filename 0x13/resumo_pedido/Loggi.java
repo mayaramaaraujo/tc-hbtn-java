@@ -1,4 +1,8 @@
-public class Loggi implements ProvedorFrete{
+import provedores.Frete;
+import provedores.ProvedorFrete;
+import provedores.TipoProvedorFrete;
+
+public class Loggi implements ProvedorFrete {
     @Override
     public Frete calcularFrete(double peso, double valor) {
         double valorFrete;
@@ -13,7 +17,7 @@ public class Loggi implements ProvedorFrete{
     }
 
     @Override
-    public TipoProvedorFrete obterProvedorFrete() {
+    public TipoProvedorFrete obterTipoProvedorFrete() {
         return TipoProvedorFrete.LOGGI;
     }
 }

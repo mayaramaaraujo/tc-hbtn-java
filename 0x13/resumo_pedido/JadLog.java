@@ -1,3 +1,7 @@
+import provedores.Frete;
+import provedores.ProvedorFrete;
+import provedores.TipoProvedorFrete;
+
 public class JadLog implements ProvedorFrete {
     @Override
     public Frete calcularFrete(double peso, double valor) {
@@ -13,7 +17,7 @@ public class JadLog implements ProvedorFrete {
     }
 
     @Override
-    public TipoProvedorFrete obterProvedorFrete() {
+    public TipoProvedorFrete obterTipoProvedorFrete() {
         return TipoProvedorFrete.JADLOG;
     }
 
