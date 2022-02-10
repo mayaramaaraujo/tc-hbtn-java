@@ -1,5 +1,4 @@
 package provedores;
-import Frete;
 
 public class JadLog implements ProvedorFrete {
     @Override

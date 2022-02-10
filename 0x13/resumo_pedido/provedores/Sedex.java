@@ -1,5 +1,4 @@
 package provedores;
-import Frete;
 
 public class Sedex implements ProvedorFrete{
     @Override
