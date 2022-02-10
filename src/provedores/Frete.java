@@ -1,4 +1,4 @@
-package provedores;
+import provedores.TipoProvedorFrete;
 
 public class Frete {
     private double valor;
