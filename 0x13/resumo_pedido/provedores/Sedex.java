@@ -1,6 +1,8 @@
 package provedores;
 
-public class Sedex implements ProvedorFrete{
+import Frete;
+
+public class Sedex implements ProvedorFrete {
     @Override
     public Frete calcularFrete(double peso, double valor) {
         double valorFrete;

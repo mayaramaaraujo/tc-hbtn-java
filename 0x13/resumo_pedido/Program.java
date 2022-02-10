@@ -1,3 +1,7 @@
+import provedores.JadLog;
+import provedores.Loggi;
+import provedores.Sedex;
+
 public class Program {
     public static void main(String[] args) {
         Pedido pedido1 = new Pedido(1, 1500, 234.90);

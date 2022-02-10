@@ -1,3 +1,5 @@
+import provedores.TipoProvedorFrete;
+
 public class Frete {
     private double valor;
     private TipoProvedorFrete tipoProvedorFrete;

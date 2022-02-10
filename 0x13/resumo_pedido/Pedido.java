@@ -1,5 +1,3 @@
-import provedores.Frete;
-
 public class Pedido {
     private int codigo;
     private double peso;
