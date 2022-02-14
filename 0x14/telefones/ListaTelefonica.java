@@ -1,25 +1,39 @@
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class ListaTelefonica {
-    private HashMap<String, ArrayList<Telefone>> listaTelefonica;
+    private HashMap<String, HashSet<Telefone>> listaTelefonica;
 
     public ListaTelefonica() {
-        listaTelefonica = new HashMap<String, ArrayList<Telefone>>();
+        listaTelefonica = new HashMap<String, HashSet<Telefone>>();
     }
 
-    public void adicionarTelefone(String nome, Telefone telefone) {
+    public HashSet<Telefone> adicionarTelefone(String nome, Telefone telefone) {
         if(buscar(nome) == null) {
-            ArrayList<Telefone> telefones = new ArrayList<>();
+            HashSet<Telefone> telefones = new HashSet<>();
             telefones.add(telefone);
             listaTelefonica.put(nome, telefones);
+            return telefones;
         } else {
-            ArrayList<Telefone> telefones = buscar(nome);
+            HashSet<Telefone> telefones = buscar(nome);
+
+            if(listaTelefonica.get(nome).contains(telefone)) {
+                throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
+            };
+
+            for (Map.Entry<String, HashSet<Telefone>> lista:listaTelefonica.entrySet()) {
+                if(lista.getValue().contains(telefone)) {
+                    throw new IllegalArgumentException("Telefone jah pertence a outra pessoa");
+                }
+            }
+
             telefones.add(telefone);
+            return telefones;
         }
     }
 
-    public ArrayList<Telefone> buscar(String nome) {
+    public HashSet<Telefone> buscar(String nome) {
         if(!listaTelefonica.containsKey(nome)) {
             return null;
         }
