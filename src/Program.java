@@ -1,19 +1,61 @@
-import java.util.TreeMap;
+import java.util.Set;
 
 public class Program {
     public static void main(String[] args) {
-        TreeMap<String, Integer> contagemFrase1 = AnalisadorFrase.contagemPalavras("Tres pratos de trigo para tres tigres tristes");
-        TreeMap<String, Integer> contagemFrase2 = AnalisadorFrase.contagemPalavras("O que eh que Caca quer? Caca quer caqui. Qual caqui que Caca quer? Caca quer qualquer caqui.");
-        TreeMap<String, Integer> contagemFrase3 = AnalisadorFrase.contagemPalavras("Larga a tia, largatixa! Lagartixa, larga a tia!");
-        TreeMap<String, Integer> contagemFrase4 = AnalisadorFrase.contagemPalavras("Maria-mole eh molenga, se nao eh molenga, nao eh maria-mole. Eh coisa malemolente, nem mala, nem mola, nem Maria, nem mole.");
-        TreeMap<String, Integer> contagemFrase5 = AnalisadorFrase.contagemPalavras("Pilha de palha e telha velha. Palha na pilha e velha telha. Pilha de telha e palha velha.");
-        TreeMap<String, Integer> contagemFrase6 = AnalisadorFrase.contagemPalavras("Embaixo da pia tem um pinto que pia, quanto mais a pia pinga mais o pinto pia!");
+        Telefone telefone1 = new Telefone("11", "9888-5551");
+        Telefone telefone2 = new Telefone("17", "99602-6725");
+        Telefone telefone3 = new Telefone("21", "9882-1514");
+        Telefone telefone4 = new Telefone("13", "8771-2344");
+        Telefone telefone5 = new Telefone("17", "3221-1788");
+        Telefone telefone6 = new Telefone("17", "3444-1112");
+        Telefone telefone7 = new Telefone("17", "3311-1566");
 
-        System.out.println(contagemFrase1);
-        System.out.println(contagemFrase2);
-        System.out.println(contagemFrase3);
-        System.out.println(contagemFrase4);
-        System.out.println(contagemFrase5);
-        System.out.println(contagemFrase6);
+        Telefone telefoneDuplicado1 = new Telefone("11", "9888-5551");
+        Telefone telefoneDuplicado2 = new Telefone("17", "3444-1112");
+
+        ListaTelefonica listaTelefonica1 = new ListaTelefonica();
+        listaTelefonica1.adicionarTelefone("Pedro Alvaro", telefone1);
+        listaTelefonica1.adicionarTelefone("Pedro Alvaro", telefone2);
+        listaTelefonica1.adicionarTelefone("Pedro Alvaro", telefone7);
+        listaTelefonica1.adicionarTelefone("Maria Joaquina", telefone3);
+        listaTelefonica1.adicionarTelefone("Maria Joaquina", telefone5);
+        listaTelefonica1.adicionarTelefone("Carlos Alberto", telefone4);
+        listaTelefonica1.adicionarTelefone("Carlos Alberto", telefone6);
+
+        try {
+            listaTelefonica1.adicionarTelefone("Pedro Alvaro", telefoneDuplicado1);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        try {
+            listaTelefonica1.adicionarTelefone("Pedro Alvaro", telefoneDuplicado2);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        Set<Telefone> telefones1 = listaTelefonica1.buscar("Pedro Alvaro");
+        if (telefones1 == null)
+            System.out.println("Telefones na encontrados");
+        else
+            System.out.println(telefones1);
+
+        Set<Telefone> telefones2 = listaTelefonica1.buscar("Maria Joaquina");
+        if (telefones2 == null)
+            System.out.println("Telefones na encontrados");
+        else
+            System.out.println(telefones2);
+
+        Set<Telefone> telefones3 = listaTelefonica1.buscar("Carlos Alberto");
+        if (telefones3 == null)
+            System.out.println("Telefones na encontrados");
+        else
+            System.out.println(telefones3);
+
+        Set<Telefone> telefones4 = listaTelefonica1.buscar("Jose Oliveira");
+        if (telefones4 == null)
+            System.out.println("Telefones na encontrados");
+        else
+            System.out.println(telefones4);
     }
 }

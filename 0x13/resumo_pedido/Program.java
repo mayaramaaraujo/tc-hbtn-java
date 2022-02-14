@@ -1,7 +1,3 @@
-import provedores.JadLog;
-import provedores.Loggi;
-import provedores.Sedex;
-
 import java.util.Locale;
 
 public class Program {

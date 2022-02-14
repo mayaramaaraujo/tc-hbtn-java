@@ -1,18 +1,42 @@
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.TreeSet;
+import java.util.Map;
 
-public class NumerosDuplicados {
+public class ListaTelefonica {
+    private HashMap<String, HashSet<Telefone>> listaTelefonica;
 
-    public static TreeSet<Integer> buscar(int[] inteiros) {
-        HashSet<Integer> todosOsInteiros = new HashSet<>();
-        TreeSet<Integer> inteirosDuplicados = new TreeSet<>();
+    public ListaTelefonica() {
+        listaTelefonica = new HashMap<String, HashSet<Telefone>>();
+    }
 
-        for (Integer inteiro: inteiros) {
-            if(!todosOsInteiros.add(inteiro)) {
-                inteirosDuplicados.add(inteiro);
+    public HashSet<Telefone> adicionarTelefone(String nome, Telefone telefone) {
+        if(buscar(nome) == null) {
+            HashSet<Telefone> telefones = new HashSet<>();
+            telefones.add(telefone);
+            listaTelefonica.put(nome, telefones);
+            return telefones;
+        } else {
+            HashSet<Telefone> telefones = buscar(nome);
+
+            if(listaTelefonica.get(nome).contains(telefone)) {
+                throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
+            };
+
+            for (Map.Entry<String, HashSet<Telefone>> lista:listaTelefonica.entrySet()) {
+                if(lista.getValue().contains(telefone)) {
+                    throw new IllegalArgumentException("Telefone jah pertence a outra pessoa");
+                }
             }
-        }
 
-        return inteirosDuplicados;
+            telefones.add(telefone);
+            return telefones;
+        }
+    }
+
+    public HashSet<Telefone> buscar(String nome) {
+        if(!listaTelefonica.containsKey(nome)) {
+            return null;
+        }
+        return listaTelefonica.get(nome);
     }
 }
