@@ -22,7 +22,7 @@ public class ListaTelefonica {
                 throw new IllegalArgumentException("Telefone jah existente para essa pessoa");
             };
 
-            for (Map.Entry<String, HashSet<Telefone>> lista : listaTelefonica.entrySet()) {
+            for (Map.Entry<String, HashSet<Telefone>> lista:listaTelefonica.entrySet()) {
                 if(lista.getValue().contains(telefone)) {
                     throw new IllegalArgumentException("Telefone jah pertence a outra pessoa");
                 }
