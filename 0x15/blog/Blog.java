@@ -12,7 +12,7 @@ public class Blog {
     }
 
     public Set<String> obterTodosAutores() {
-        Set<String> todosOsAutores = new HashSet<>();
+        Set<String> todosOsAutores = new TreeSet<>();
 
         for (Post posts : listaDePostagens) {
             todosOsAutores.add(posts.getAutor());

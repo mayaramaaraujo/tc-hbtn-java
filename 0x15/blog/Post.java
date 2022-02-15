@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Post {
     private String autor;
     private String titulo;
@@ -26,4 +28,5 @@ public class Post {
     public String getCategoria() {
         return categoria;
     }
+
 }
