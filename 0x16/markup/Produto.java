@@ -1,7 +1,7 @@
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class Produto {
+public class Produto implements Consumer<Double>, Supplier<Double> {
     Consumer<Double> atualizarMarkUp;
     private Double preco;
     private String nome;
@@ -26,5 +26,16 @@ public class Produto {
 
     public Double getPercentualMarkUp() {
         return percentualMarkUp;
+    }
+
+
+    @Override
+    public void accept(Double valor) {
+        this.atualizarMarkUp.accept(valor);
+    }
+
+    @Override
+    public Double get() {
+        return this.precoComMarkUp.get();
     }
 }
