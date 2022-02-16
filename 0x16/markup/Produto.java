@@ -1,19 +1,29 @@
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class Produto implements Consumer<Double>, Supplier<Double> {
-    Consumer<Double> atualizarMarkUp;
+public class Produto {
     private Double preco;
     private String nome;
     private Double percentualMarkUp;
+    Consumer<Double> atualizarMarkUp;
     Supplier<Double> precoComMarkUp;
 
     public Produto(Double preco, String nome) {
         this.nome = nome;
         this.preco = preco;
         this.percentualMarkUp = 10d;
-        this.precoComMarkUp = () -> this.preco * (percentualMarkUp + 100)/100;
-        this.atualizarMarkUp = (valor) -> this.percentualMarkUp = valor;
+        this.precoComMarkUp =  new Supplier<Double>() {
+            @Override
+            public Double get() {
+                return preco * (percentualMarkUp + 100)/100;
+            }
+        };
+        this.atualizarMarkUp = new Consumer<Double>() {
+            @Override
+            public void accept(Double valor) {
+                percentualMarkUp = valor;
+            }
+        };
     }
 
     public String getNome() {
@@ -26,16 +36,5 @@ public class Produto implements Consumer<Double>, Supplier<Double> {
 
     public Double getPercentualMarkUp() {
         return percentualMarkUp;
-    }
-
-
-    @Override
-    public void accept(Double valor) {
-        this.atualizarMarkUp.accept(valor);
-    }
-
-    @Override
-    public Double get() {
-        return this.precoComMarkUp.get();
     }
 }
