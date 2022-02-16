@@ -94,7 +94,8 @@ public class Blog {
 
         for (Post post: listaDePostagens) {
             if(todosOsPostsPorAutor.containsKey(post.getAutor())) {
-                todosOsPostsPorAutor.get(post.getAutor()).add(post);
+
+                //todosOsPostsPorAutor.get(post.getAutor()).add(post);
             } else {
                 todosOsPostsPorAutor.put(post.getAutor(), obterPostsPorCategoria(post.getCategoria()));
             }
