@@ -63,7 +63,7 @@ public class Blog {
     }
 
     public Set<Post> obterPostsPorCategoria(Categorias categorias) {
-        Set<Post> postsPorCategoria = new HashSet<>();
+        Set<Post> postsPorCategoria = new TreeSet<>();
 
         for (Post post: listaDePostagens) {
             if(post.getCategoria().equals(categorias)) {
