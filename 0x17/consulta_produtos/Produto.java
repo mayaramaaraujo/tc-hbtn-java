@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Produto {
     private String nome;
     private double preco;
@@ -35,6 +37,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return this.nome + " " + this.preco + " " + this.peso + " " + this.quantidadeEmEstoque + " " + this.tipo;
+        DecimalFormat df = new DecimalFormat("#,###.000000");
+        return this.nome + " " + df.format(this.preco) + " " + df.format(this.peso) + " " + this.quantidadeEmEstoque + " " + this.tipo;
     }
 }
