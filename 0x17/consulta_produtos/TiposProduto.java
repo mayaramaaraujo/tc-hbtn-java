@@ -1,5 +1,5 @@
 public enum TiposProduto {
-    Cozinha,
+    COZINHA,
     Eletronico,
     Brinquedo;
 }
