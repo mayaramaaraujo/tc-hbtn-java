@@ -28,7 +28,7 @@ public class Program {
                 p -> p.getPeso() <= 1600);
 
         List<Produto> produtosCozinha = ConsultaProdutos.filtrar(produtos,
-                p -> p.getTipo() == TiposProduto.Cozinha);
+                p -> p.getTipo() == TiposProduto.COZINHA);
 
         List<Produto> produtosBaixoEstoque = ConsultaProdutos.filtrar(produtos,
                 p -> p.getQuantidadeEmEstoque() <= 10);
