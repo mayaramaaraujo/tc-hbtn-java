@@ -5,25 +5,13 @@ public class Produto {
     private Double preco;
     private String nome;
     private Double percentualMarkUp;
-    Consumer<Double> atualizarMarkUp;
-    Supplier<Double> precoComMarkUp;
+    Consumer<Double> atualizarMarkUp = x -> this.percentualMarkUp = x;
+    Supplier<Double> precoComMarkUp = () -> this.preco * (this.percentualMarkUp + 100)/100;
 
     public Produto(Double preco, String nome) {
         this.nome = nome;
         this.preco = preco;
         this.percentualMarkUp = 10d;
-        this.precoComMarkUp =  new Supplier<Double>() {
-            @Override
-            public Double get() {
-                return preco * (percentualMarkUp + 100)/100;
-            }
-        };
-        this.atualizarMarkUp = new Consumer<Double>() {
-            @Override
-            public void accept(Double valor) {
-                percentualMarkUp = valor;
-            }
-        };
     }
 
     public String getNome() {
