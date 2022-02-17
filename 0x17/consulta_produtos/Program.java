@@ -4,19 +4,19 @@ import java.util.List;
 public class Program {
     public static void main(String[] args) {
         Produto produto1 = new Produto("Cafe Chocolate Trufado Baggio",
-                21.99, 250, 120, TiposProduto.Cozinha);
+                21.99, 250, 120, TiposProduto.COZINHA);
 
         Produto produto2 = new Produto("Leite Condensado Moca",
-                6.29, 395, 200, TiposProduto.Cozinha);
+                6.29, 395, 200, TiposProduto.COZINHA);
 
         Produto produto3 = new Produto("Carro Vortex",
-                799.90, 1560, 5, TiposProduto.Brinquedo);
+                799.90, 1560, 5, TiposProduto.BRINQUEDO);
 
         Produto produto4 = new Produto("Smart TV LED 32 HD LG",
-                1452.55, 6300, 7, TiposProduto.Eletronico);
+                1452.55, 6300, 7, TiposProduto.ELETRONICO);
 
         Produto produto5 = new Produto("Nintendo Switch",
-                2990.00, 1700, 12, TiposProduto.Eletronico);
+                2990.00, 1700, 12, TiposProduto.ELETRONICO);
 
         List<Produto> produtos = Arrays.asList(
                 produto1, produto2, produto3, produto4, produto5);
