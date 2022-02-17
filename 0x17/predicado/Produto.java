@@ -1,4 +1,4 @@
-import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class Produto {
     private String nome;
@@ -37,6 +37,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return String.format("%s %f %f %d %s", getNome(), getPreco(), getPeso(), getQuantidadeEmEstoque(), getTipo());
+        return String.format(Locale.FRANCE, "%s %f %f %d %s", getNome(), getPreco(), getPeso(), getQuantidadeEmEstoque(), getTipo());
     }
 }
