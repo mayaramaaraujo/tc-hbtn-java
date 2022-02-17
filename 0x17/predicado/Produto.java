@@ -35,6 +35,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return this.nome + " " + this.preco + " " + this.peso + " " + this.quantidadeEmEstoque + " " + this.tipo;
+        return String.format("%s %f %f %d %s", getNome(), getPreco(), getPeso(), getQuantidadeEmEstoque(), getTipo());
     }
 }

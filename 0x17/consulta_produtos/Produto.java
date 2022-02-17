@@ -37,7 +37,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        DecimalFormat df = new DecimalFormat("#,###.000000");
-        return this.nome + " " + df.format(this.preco) + " " + df.format(this.peso) + " " + this.quantidadeEmEstoque + " " + this.tipo;
+        return String.format("%s %f %f %d %s", getNome(), getPreco(), getPeso(), getQuantidadeEmEstoque(), getTipo());
     }
 }
