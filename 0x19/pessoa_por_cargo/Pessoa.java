@@ -35,6 +35,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return String.format("%s %s %s %s %s %f", codigo, nome, cargo, idade, "R$", salario);
+        return String.format("%s %s %s %s %s %f", "[" + codigo + "]", nome, cargo, idade, "R$", salario);
     }
 }
