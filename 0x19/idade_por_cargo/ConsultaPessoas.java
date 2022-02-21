@@ -13,7 +13,7 @@ public class ConsultaPessoas {
 
     static Map<String, List<Integer>> obterIdadePorCargo(List<Pessoa> pessoas) {
         return pessoas.stream()
-                .collect(Collectors.groupingBy(Pessoa::getCargo, mapping(Pessoa::getIdade, toList())));
+                .collect(Collectors.groupingBy(Pessoa::getCargo, Collectors.mapping(Pessoa::getIdade, toList())));
     }
 
 }
