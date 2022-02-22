@@ -20,11 +20,10 @@ public class ConsultaPessoas {
     }
 
     static TreeMap<String, Set<Pessoa>> obterPessoasAgrupadasPorCargoEmOrdemReversa(List<Pessoa> pessoas) {
-        /*TreeMap<String, Set<Pessoa>> pessoasPorCargoReversa = pessoas.stream().collect(Collectors.toCollection(
-                () -> new TreeMap<String, Set<Pessoa>>(Collectors.groupingBy(Pessoa::getCargo, toSet()))));*/
 
         TreeMap<String, Set<Pessoa>> pessoasPorCargoReversa = pessoas.stream()
-                .collect(Collectors.groupingBy(Pessoa::getCargo, () -> new TreeMap<>(Comparator.reverseOrder()), Collectors.toSet()));
+                .collect(Collectors.groupingBy(Pessoa::getCargo, () -> new TreeMap<String, Set<Pessoa>>(Comparator.reverseOrder()),
+                        toCollection(() -> new TreeSet<Pessoa>(Comparator.comparing(pessoa -> pessoa.getNome())))));
         return pessoasPorCargoReversa;
     }
 
