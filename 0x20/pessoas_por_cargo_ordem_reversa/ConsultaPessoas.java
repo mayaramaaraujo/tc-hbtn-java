@@ -23,11 +23,22 @@ public class ConsultaPessoas {
 
         TreeMap<String, Set<Pessoa>> pessoasPorCargoEmOrdemReversa = pessoas.stream()
                 .collect(Collectors.groupingBy(Pessoa::getCargo,
-                        () -> new TreeMap<String, Set<Pessoa>>(Comparator.reverseOrder()),
-                        toCollection(() -> new TreeSet<>(Comparator.comparing(Pessoa::getNome)))
+                        () -> new TreeMap<>(Comparator.reverseOrder()),
+                        Collectors.toSet()
                 ));
 
         return pessoasPorCargoEmOrdemReversa;
     }
 
+    static Map<String, Long> obterContagemPessoasPorCargo(List<Pessoa> pessoas) {
+        return pessoas.stream().collect(Collectors.groupingBy(Pessoa::getCargo, Collectors.counting()));
+    }
+
+    static Map<String, Map<Integer, Long>>  obterContagemPessoasPorCargoEIdade(List<Pessoa> pessoas) {
+        return pessoas.stream().collect(Collectors.groupingBy(Pessoa::getCargo, Collectors.groupingBy(Pessoa::getIdade, Collectors.counting())));
+    }
+
+    static Map<String, Double> obterMediaSalarioPorCargo(List<Pessoa> pessoas) {
+        return pessoas.stream().collect(Collectors.groupingBy(Pessoa::getCargo, Collectors.averagingDouble(Pessoa::getSalario)));
+    }
 }
