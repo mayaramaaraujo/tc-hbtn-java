@@ -23,7 +23,7 @@ public class ConsultaPessoas {
 
         TreeMap<String, Set<Pessoa>> pessoasPorCargoReversa = pessoas.stream()
                 .collect(Collectors.groupingBy(Pessoa::getCargo, () -> new TreeMap<String, Set<Pessoa>>(Comparator.reverseOrder()),
-                        toCollection(() -> new TreeSet<Pessoa>(Comparator.comparing(pessoa -> pessoa.getIdade())))));
+                        toCollection(() -> new HashSet<Pessoa>())));
         return pessoasPorCargoReversa;
     }
 
