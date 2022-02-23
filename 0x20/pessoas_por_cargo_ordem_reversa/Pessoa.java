@@ -1,6 +1,6 @@
 import java.util.Locale;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa> {
     private int codigo;
     private String nome;
     private String cargo;
@@ -38,5 +38,10 @@ public class Pessoa {
     @Override
     public String toString() {
         return String.format(Locale.FRANCE,"%s %s %s %s %s %f", "[" + codigo + "]", nome, cargo, idade, "R$", salario);
+    }
+
+    @Override
+    public int compareTo(Pessoa o) {
+        return this.getNome().compareTo(o.getNome());
     }
 }
