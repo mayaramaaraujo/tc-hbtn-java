@@ -27,10 +27,14 @@ public class ConsultaPessoas {
 
         return listaPESSOAS;*/
 
-        return pessoas.stream().collect(Collectors.groupingBy(Pessoa::getCargo,
+
+        TreeMap<String, TreeSet<Pessoa>> listaPessoas = pessoas.stream().collect(
+                Collectors.groupingBy(Pessoa::getCargo,
                 () -> new TreeMap<>(Comparator.reverseOrder()),
                 Collectors.toCollection(TreeSet::new))
         );
+
+        return listaPessoas;
 
     }
 
