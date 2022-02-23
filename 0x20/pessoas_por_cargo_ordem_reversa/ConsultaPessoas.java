@@ -27,8 +27,7 @@ public class ConsultaPessoas {
 
         return listaPESSOAS;*/
 
-        return pessoas.stream().collect(
-                Collectors.groupingBy(Pessoa::getCargo,
+        return pessoas.stream().collect(Collectors.groupingBy(Pessoa::getCargo,
                 () -> new TreeMap<>(Comparator.reverseOrder()),
                 Collectors.toCollection(TreeSet::new))
         );
