@@ -1,6 +1,7 @@
 import java.util.Locale;
+import java.util.Objects;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa> {
     private int codigo;
     private String nome;
     private String cargo;
@@ -38,5 +39,23 @@ public class Pessoa {
     @Override
     public String toString() {
         return String.format(Locale.FRANCE,"%s %s %s %s %s %f", "[" + codigo + "]", nome, cargo, idade, "R$", salario);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return codigo == pessoa.codigo && idade == pessoa.idade && Double.compare(pessoa.salario, salario) == 0 && Objects.equals(nome, pessoa.nome) && Objects.equals(cargo, pessoa.cargo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo, nome, cargo, idade, salario);
+    }
+
+    @Override
+    public int compareTo(Pessoa o) {
+        return this.getNome().compareTo(o.getNome());
     }
 }

@@ -19,15 +19,12 @@ public class ConsultaPessoas {
                 .collect(Collectors.groupingBy(Pessoa::getCargo, Collectors.filtering(pessoa -> pessoa.getIdade() > 40, Collectors.toList())));
     }
 
-    static TreeMap<String, Set<Pessoa>> obterPessoasAgrupadasPorCargoEmOrdemReversa(List<Pessoa> pessoas) {
-
-        TreeMap<String, Set<Pessoa>> pessoasPorCargoEmOrdemReversa = pessoas.stream()
-                .collect(Collectors.groupingBy(Pessoa::getCargo,
+    static TreeMap<String, TreeSet<Pessoa>> obterPessoasAgrupadasPorCargoEmOrdemReversa(List<Pessoa> pessoas) {
+        return pessoas.stream().collect(
+                Collectors.groupingBy(Pessoa::getCargo,
                         () -> new TreeMap<>(Comparator.reverseOrder()),
-
-                ));
-
-        return pessoasPorCargoEmOrdemReversa;
+                        Collectors.toCollection(TreeSet::new))
+        );
     }
 
     static Map<String, Long> obterContagemPessoasPorCargo(List<Pessoa> pessoas) {
