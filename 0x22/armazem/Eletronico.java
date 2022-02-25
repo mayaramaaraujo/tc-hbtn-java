@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Eletronico {
     private String descricao;
     private Double valor;
@@ -17,6 +19,6 @@ public class Eletronico {
 
     @Override
     public String toString() {
-        return String.format("%s %f", "[" + descricao + "]", valor);
+        return String.format(Locale.FRANCE, "%s %f", "[" + descricao + "]", valor);
     }
 }
