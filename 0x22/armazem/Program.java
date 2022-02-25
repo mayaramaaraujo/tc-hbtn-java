@@ -2,9 +2,9 @@ import java.util.*;
 
 public class Program {
     public static void main(String[] args) {
-        Comida comida1 = new Comida("arroz", 100, 15.9);
-        Comida comida2 = new Comida("feijao", 80, 23.0);
-        Comida comida3 = new Comida("pacoca", 165, 7.5);
+        Comida comida1 = new Comida("arroz", 100d, 15.9);
+        Comida comida2 = new Comida("feijao", 80d, 23.0);
+        Comida comida3 = new Comida("pacoca", 165d, 7.5);
 
         Eletronico eletronico1 = new Eletronico("Smart TV LED 32 HD LG", 1452.55);
         Eletronico eletronico2 = new Eletronico("Nintendo Switch", 2990d);

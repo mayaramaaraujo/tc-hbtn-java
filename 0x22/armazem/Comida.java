@@ -2,10 +2,10 @@ import java.util.Locale;
 
 public class Comida {
     private String nome;
-    private int calorias;
+    private Double calorias;
     private Double preco;
 
-    public Comida(String nome, int calorias, Double preco) {
+    public Comida(String nome, Double calorias, Double preco) {
         this.nome = nome;
         this.calorias = calorias;
         this.preco = preco;
@@ -15,7 +15,7 @@ public class Comida {
         return nome;
     }
 
-    public int getCalorias() {
+    public Double getCalorias() {
         return calorias;
     }
 
@@ -25,6 +25,6 @@ public class Comida {
 
     @Override
     public String toString() {
-        return String.format(Locale.FRANCE,"%s %s R$ %f", "[" + nome + "]", calorias, preco);
+        return String.format(Locale.FRANCE,"%s %f R$ %f", "[" + nome + "]", calorias, preco);
     }
 }
