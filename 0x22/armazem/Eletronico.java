@@ -19,6 +19,6 @@ public class Eletronico {
 
     @Override
     public String toString() {
-        return String.format(Locale.FRANCE, "%s %f", "[" + descricao + "]", valor);
+        return String.format(Locale.FRANCE, "%s R$ %f", "[" + descricao + "]", valor);
     }
 }
