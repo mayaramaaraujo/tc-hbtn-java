@@ -9,6 +9,7 @@ public class SerializarEstudantes<T> {
         this.nomeDoArquivo = nomeDoArquivo;
     }
 
+    @SuppressWarnings("unchecked")
     public void serializar(List<Estudante> estudantes) {
         try(ObjectOutput out = new ObjectOutputStream(new FileOutputStream(nomeDoArquivo))) {
             out.writeObject(estudantes);
@@ -17,6 +18,7 @@ public class SerializarEstudantes<T> {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public List<Estudante> desserializar() {
         List<Estudante> estudantes = new ArrayList<>();
 
