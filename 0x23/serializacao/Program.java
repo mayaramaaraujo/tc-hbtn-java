@@ -4,11 +4,11 @@ public class Program {
 
     public static void main(String[] args) {
 
-        Estudante estudante1 = new Estudante(21, "Jane Doe", "1011121314");
-        Estudante estudante2 = new Estudante(33, "John Bannons", "1122334455");
-        Estudante estudante3 = new Estudante(27, "Alyssa White", "minha_senha_100");
-        Estudante estudante4 = new Estudante(35, "Maike Eed", "Maike@eed100");
-        Estudante estudante5 = new Estudante(19, "Peter Diemon", "123");
+        Estudante estudante1 = new Estudante(21, "Jane Doe");
+        Estudante estudante2 = new Estudante(33, "John Bannons");
+        Estudante estudante3 = new Estudante(27, "Alyssa White");
+        Estudante estudante4 = new Estudante(35, "Maike Eed");
+        Estudante estudante5 = new Estudante(19, "Peter Diemon");
 
         List<Estudante> estudantes = List.of(
                 estudante1, estudante2, estudante3, estudante4, estudante5

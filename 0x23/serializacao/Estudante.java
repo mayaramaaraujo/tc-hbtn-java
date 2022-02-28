@@ -5,10 +5,9 @@ public class Estudante implements Serializable {
     private String nome;
     private int idade;
 
-    public Estudante(int idade, String nome, String senha) {
+    public Estudante(int idade, String nome) {
         this.nome = nome;
         this.idade = idade;
-        this.senha = senha;
     }
 
     private String senha;
