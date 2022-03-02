@@ -1,4 +1,4 @@
 #!/bin/bash
-javac com/holbertonschool/matematica/Aritmeticos.java -d ./build
+javac -d build com/holbertonschool/matematica/Aritmeticos.java
 cd build
-jar -cvf Matematica.jar com
+jar -cvf  Matematica.jar com
