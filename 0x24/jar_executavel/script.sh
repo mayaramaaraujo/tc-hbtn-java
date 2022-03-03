@@ -1,3 +1,3 @@
 #!/bin/bash
-jar -cvf  Executavel.jar com
+jar -cvmf  Executavel.jar com
 java -jar Executavel.jar
