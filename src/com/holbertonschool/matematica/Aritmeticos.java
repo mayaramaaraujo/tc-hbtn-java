@@ -1,5 +1,3 @@
-package com.holbertonschool.matematica;
-
 public class Aritmeticos {
     public static int somar(int a, int b) {
         return a + b;
